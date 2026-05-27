@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Museo virtual - Globo sonda</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+</head>
+
+<body>
+<a-scene>
+
+  <!-- CIELO AZUL -->
+  <a-sky color="#87CEEB"></a-sky>
+
+  <!-- LUZ GENERAL -->
+  <a-light type="ambient" color="#FFFFFF" intensity="0.7"></a-light>
+  <a-light type="directional" position="4 8 4" intensity="0.8"></a-light>
+
+  <!-- PLANO VERDE EXTERIOR -->
+  <a-plane
+    position="0 0 0"
+    rotation="-90 0 0"
+    width="80"
+    height="80"
+    color="#7BB661">
+  </a-plane>
+
+  <!-- MUSEO: SUELO INTERIOR TIPO PARQUET -->
+  <a-plane
+    position="0 0.03 -5"
+    rotation="-90 0 0"
+    width="24"
+    height="16"
+    color="#D8C3A5">
+  </a-plane>
+
+  <!-- TIRAS SUAVES PARA SIMULAR PARQUET -->
+  <a-box position="-9 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+  <a-box position="-6 0.04 -5" width="2" height="0.02" depth="16" color="#CDB89F"></a-box>
+  <a-box position="-3 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+  <a-box position="0 0.04 -5" width="2" height="0.02" depth="16" color="#D8C3A5"></a-box>
+  <a-box position="3 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+  <a-box position="6 0.04 -5" width="2" height="0.02" depth="16" color="#CDB89F"></a-box>
+  <a-box position="9 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+
+  <!-- PAREDES DEL MUSEO -->
+  <!-- Color blanco brillante con matiz azul -->
+  
+  <!-- Pared del fondo -->
+  <a-box
+    position="0 2.5 -13"
+    width="24"
+    height="5"
+    depth="0.25"
+    color="#F6FBFF">
+  </a-box>
+
+  <!-- Pared izquierda -->
+  <a-box
+    position="-12 2.5 -5"
+    width="0.25"
+    height="5"
+    depth="16"
+    color="#F6FBFF">
+  </a-box>
+
+  <!-- Pared derecha -->
+  <a-box
+    position="12 2.5 -5"
+    width="0.25"
+    height="5"
+    depth="16"
+    color="#F6FBFF">
+  </a-box>
+
+  <!-- Entrada frontal: dos paredes dejando hueco central -->
+  <a-box
+    position="-8 2.5 3"
+    width="8"
+    height="5"
+    depth="0.25"
+    color="#F6FBFF">
+  </a-box>
+
+  <a-box
+    position="8 2.5 3"
+    width="8"
+    height="5"
+    depth="0.25"
+    color="#F6FBFF">
+  </a-box>
+
+  <!-- Parte superior de la entrada -->
+  <a-box
+    position="0 4.4 3"
+    width="8"
+    height="1.2"
+    depth="0.25"
+    color="#F6FBFF">
+  </a-box>
+
+  <!-- TECHO BLANCO -->
+  <a-box
+    position="0 5.1 -5"
+    width="24"
+    height="0.2"
+    depth="16"
+    color="#FFFFFF"
+    opacity="0.95">
+  </a-box>
+
+  <!-- CARTEL DE ENTRADA -->
+  <a-box
+    position="0 3.1 2.82"
+    width="7"
+    height="1"
+    depth="0.08"
+    color="#FFFFFF">
+  </a-box>
+
+  <a-text
+    value="EL MALASANA EN LA ESTRATOSFERA"
+    position="0 3.25 2.75"
+    align="center"
+    width="6.5"
+    color="#1B4F72">
+  </a-text>
+
+  <a-text
+    value="Semillas, cristales y ciencia escolar"
+    position="0 2.9 2.75"
+    align="center"
+    width="5"
+    color="#2E86C1">
+  </a-text>
+
+  <!-- GLOBO SONDA EN EL INTERIOR -->
+  <a-sphere
+    position="0 4 -6"
+    radius="1.2"
+    color="#FFFFFF"
+    roughness="0.4">
+  </a-sphere>
+
+  <!-- Cuerda del globo -->
+  <a-cylinder
+    position="0 2.6 -6"
+    radius="0.02"
+    height="2.4"
+    color="#555555">
+  </a-cylinder>
+
+  <!-- Cápsula del experimento -->
+  <a-box
+    position="0 1.25 -6"
+    width="1.4"
+    height="0.8"
+    depth="1"
+    color="#D6EAF8">
+  </a-box>
+
+  <a-text
+    value="Capsula experimental"
+    position="0 0.65 -6"
+    align="center"
+    width="3"
+    color="#154360">
+  </a-text>
+
+  <!-- ZONA QUÍMICA: CRISTALES -->
+  <a-box
+    position="-6 0.55 -7"
+    width="4"
+    height="0.25"
+    depth="2"
+    color="#FFFFFF">
+  </a-box>
+
+  <a-text
+    value="CRISTALES"
+    position="-6 1.1 -8.1"
+    align="center"
+    width="4"
+    color="#5B2C6F">
+  </a-text>
+
+  <!-- Cristales sencillos -->
+  <a-octahedron position="-6.7 1 -7" radius="0.35" color="#A9CCE3"></a-octahedron>
+  <a-octahedron position="-6 1.1 -7" radius="0.45" color="#D7BDE2"></a-octahedron>
+  <a-octahedron position="-5.3 1 -7" radius="0.3" color="#AED6F1"></a-octahedron>
+
+  <!-- ZONA BIOLOGÍA: LENTEJAS -->
+  <a-box
+    position="6 0.55 -7"
+    width="4"
+    height="0.25"
+    depth="2"
+    color="#FFFFFF">
+  </a-box>
+
+  <a-text
+    value="LENTEJAS VIAJERAS"
+    position="6 1.1 -8.1"
+    align="center"
+    width="4"
+    color="#145A32">
+  </a-text>
+
+  <!-- Bandeja de germinación -->
+  <a-box position="6 0.9 -7" width="2.5" height="0.15" depth="1.2" color="#FDFEFE"></a-box>
+  <a-sphere position="5.3 1.05 -7" radius="0.12" color="#8B5A2B"></a-sphere>
+  <a-sphere position="5.8 1.05 -7.2" radius="0.12" color="#8B5A2B"></a-sphere>
+  <a-sphere position="6.3 1.05 -6.8" radius="0.12" color="#8B5A2B"></a-sphere>
+
+  <!-- Tallos verdes -->
+  <a-cylinder position="6.8 1.25 -7" radius="0.03" height="0.5" color="#2ECC71"></a-cylinder>
+  <a-sphere position="6.8 1.55 -7" radius="0.12" color="#27AE60"></a-sphere>
+
+  <!-- PANEL DEL FONDO: MISIÓN -->
+  <a-box
+    position="0 2.8 -12.82"
+    width="10"
+    height="2"
+    depth="0.08"
+    color="#FFFFFF">
+  </a-box>
+
+  <a-text
+    value="MISION: UN GLOBO SONDA LLEVA EXPERIMENTOS ESCOLARES A LA ESTRATOSFERA"
+    position="0 3.35 -12.7"
+    align="center"
+    width="8.5"
+    color="#1B4F72">
+  </a-text>
+
+  <a-text
+    value="Cristales de Quimica y lentejas de Biologia viajan para comparar muestras enviadas y muestras control."
+    position="0 2.75 -12.7"
+    align="center"
+    width="8"
+    color="#34495E">
+  </a-text>
+
+  <!-- LÍNEA AZUL DE RECORRIDO -->
+  <a-box
+    position="0 0.08 -4.5"
+    width="0.25"
+    height="0.03"
+    depth="11"
+    color="#4A90E2">
+  </a-box>
+
+  <!-- CÁMARA -->
+  <a-entity
+    position="0 1.6 10"
+    camera
+    look-controls
+    wasd-controls>
+  </a-entity>
+
+</a-scene>
+</body>
+</html>
