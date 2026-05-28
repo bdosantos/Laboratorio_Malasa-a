@@ -3,97 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <title>Museo virtual - Globo sonda</title>
-
-  <!-- Librería A-Frame -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
 </head>
 
 <body>
-  <a-scene>
+<a-scene>
 
-    <!-- ASSETS: modelos 3D -->
-    <a-assets>
-      <a-asset-item id="museo" src="museo.glb"></a-asset-item>
-      <a-asset-item id="globo" src="Globo.glb"></a-asset-item>
-    </a-assets>
+  <a-assets>
+    <a-asset-item id="museo" src="museo.glb"></a-asset-item>
+    <a-asset-item id="globo" src="Globo.glb"></a-asset-item>
+  </a-assets>
 
-    <!-- CIELO AZUL -->
-    <a-sky color="#87CEEB"></a-sky>
+  <!-- CIELO AZUL -->
+  <a-sky color="#87CEEB"></a-sky>
 
-    <!-- LUCES -->
-    <a-light 
-      type="ambient" 
-      color="#FFFFFF" 
-      intensity="0.7">
-    </a-light>
+  <!-- LUZ GENERAL -->
+  <a-light type="ambient" color="#FFFFFF" intensity="0.7"></a-light>
+  <a-light type="directional" position="4 8 4" intensity="0.8"></a-light>
 
-    <a-light 
-      type="directional" 
-      position="4 8 4" 
-      color="#FFFFFF" 
-      intensity="0.8">
-    </a-light>
+  <!-- PLANO VERDE EXTERIOR: CÉSPED -->
+  <a-plane
+    position="0 0 0"
+    rotation="-90 0 0"
+    width="100"
+    height="100"
+    color="#5FAF45">
+  </a-plane>
 
-    <!-- PLANO VERDE EXTERIOR -->
-    <a-plane
-      position="0 0 0"
-      rotation="-90 0 0"
-      width="80"
-      height="80"
-      color="#7BB661">
-    </a-plane>
+  <!-- ALGUNAS FRANJAS PARA SIMULAR CÉSPED -->
+  <a-box position="-20 0.01 0" width="1" height="0.01" depth="100" color="#6FCF50"></a-box>
+  <a-box position="-10 0.01 0" width="1" height="0.01" depth="100" color="#4E9F38"></a-box>
+  <a-box position="0 0.01 0" width="1" height="0.01" depth="100" color="#6FCF50"></a-box>
+  <a-box position="10 0.01 0" width="1" height="0.01" depth="100" color="#4E9F38"></a-box>
+  <a-box position="20 0.01 0" width="1" height="0.01" depth="100" color="#6FCF50"></a-box>
 
-    <!-- SUELO INTERIOR TIPO PARQUET -->
-    <a-plane
-      position="0 0.03 -5"
-      rotation="-90 0 0"
-      width="24"
-      height="16"
-      color="#D8C3A5">
-    </a-plane>
+  <!-- SUELO INTERIOR TIPO PARQUET -->
+  <a-plane
+    position="0 0.03 -5"
+    rotation="-90 0 0"
+    width="24"
+    height="16"
+    color="#D8C3A5">
+  </a-plane>
 
-    <!-- TIRAS SUAVES PARA SIMULAR PARQUET -->
-    <a-box position="-9 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
-    <a-box position="-6 0.04 -5" width="2" height="0.02" depth="16" color="#CDB89F"></a-box>
-    <a-box position="-3 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
-    <a-box position="0 0.04 -5" width="2" height="0.02" depth="16" color="#D8C3A5"></a-box>
-    <a-box position="3 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
-    <a-box position="6 0.04 -5" width="2" height="0.02" depth="16" color="#CDB89F"></a-box>
-    <a-box position="9 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+  <!-- TIRAS SUAVES PARA SIMULAR PARQUET -->
+  <a-box position="-9 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+  <a-box position="-6 0.04 -5" width="2" height="0.02" depth="16" color="#CDB89F"></a-box>
+  <a-box position="-3 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+  <a-box position="0 0.04 -5" width="2" height="0.02" depth="16" color="#D8C3A5"></a-box>
+  <a-box position="3 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
+  <a-box position="6 0.04 -5" width="2" height="0.02" depth="16" color="#CDB89F"></a-box>
+  <a-box position="9 0.04 -5" width="2" height="0.02" depth="16" color="#E3D0B4"></a-box>
 
-    <!-- PARED CLARA DE FONDO -->
-    <a-box
-      position="0 2.5 -13"
-      width="24"
-      height="5"
-      depth="0.25"
-      color="#F6FBFF">
-    </a-box>
+  <!-- MODELO DEL MUSEO -->
+  <a-entity 
+    gltf-model="#museo"  
+    position="0 0 0"  
+    rotation="0 0 0"  
+    scale="2 2 3">
+  </a-entity>
 
-    <!-- MODELO DEL MUSEO -->
-    <a-entity 
-      gltf-model="#museo"
-      position="0 0 0"
-      rotation="0 0 0"
-      scale="2 2 3">
-    </a-entity>
+  <!-- GLOBO SONDA FUERA DEL MUSEO -->
+  <a-entity 
+    gltf-model="#globo" 
+    position="-18 0 -5" 
+    rotation="0 0 0" 
+    scale="0.7 0.7 0.6">
+  </a-entity>
 
-    <!-- MODELO DEL GLOBO SONDA -->
-    <a-entity 
-      gltf-model="#globo"
-      position="-9 0 -8"
-      rotation="0 0 0"
-      scale="0.7 0.7 0.6">
-    </a-entity>
+  <!-- PEANA PARA EL GLOBO -->
+  <a-cylinder
+    position="-18 0.08 -5"
+    radius="1.5"
+    height="0.15"
+    color="#DDDDDD">
+  </a-cylinder>
 
-    <!-- CÁMARA -->
-    <a-entity
-      position="0 1.6 4"
-      camera
-      look-controls
-      wasd-controls>
-    </a-entity>
+  <!-- TEXTO JUNTO AL GLOBO -->
+  <a-text
+    value="Globo sonda"
+    position="-20 2.8 -5"
+    rotation="0 90 0"
+    color="#003366"
+    width="5">
+  </a-text>
 
-  </a-scene>
+  <!-- CÁMARA -->
+  <a-entity
+    position="0 1.6 10"
+    camera
+    look-controls
+    wasd-controls>
+  </a-entity>
+
+</a-scene>
 </body>
 </html>
