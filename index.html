@@ -17,6 +17,7 @@
     <a-asset-item id="museo" src="museo.glb"></a-asset-item>
     <a-asset-item id="globo" src="globo.glb"></a-asset-item>
     <a-asset-item id="caballete" src="caballete.glb"></a-asset-item>
+    <a-asset-item id="suelo" src="suelo.glb"></a-asset-item>
 
     <!-- Imágenes -->
     <img id="logos" src="logos.png">
@@ -54,18 +55,17 @@
     intensity="0.8">
   </a-light>
 
-  <!-- PLANO VERDE EXTERIOR: CÉSPED -->
-  <a-plane
-    position="0 0 0"
-    rotation="-90 0 0"
-    width="100"
-    height="100"
-    color="#5FAF45">
-  </a-plane>
+ 
 
   <!-- MODELO DEL MUSEO -->
   <a-entity 
     gltf-model="#museo"  
+    position="0 0 0"  
+    rotation="0 0 0"  
+    scale="2 2 2">
+  </a-entity>
+  <a-entity 
+    gltf-model="#suelo"  
     position="0 0 0"  
     rotation="0 0 0"  
     scale="2 2 2">
