@@ -46,6 +46,18 @@
       crossorigin="anonymous">
     </video>
   </a-assets>
+   <video 
+      id="hinchar_globo" 
+      src="hinchar_globo.mp4"
+      autoplay
+      loop
+      muted
+      playsinline
+      webkit-playsinline
+      preload="auto"
+      crossorigin="anonymous">
+    </video>
+  </a-assets>
 
   <!-- CIELO AZUL -->
   <a-sky color="#87CEEB"></a-sky>
@@ -131,6 +143,13 @@
     rotation="0 90 0" 
     scale="0.75 0.75 0.75">
   </a-entity>
+   <a-video
+    src="#hinchar_globo"
+    position="10.3 3 30"
+    rotation="0 180 0"
+    width="5"
+    height="3">
+  </a-video>
 
   <a-entity 
     gltf-model="#caballete" 
