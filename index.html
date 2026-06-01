@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Laboratorio Malasaña: Ciencia en Condiciones Extremas</title>
@@ -9,37 +10,70 @@
 </head>
 
 <body>
+
 <a-scene>
 
-  <!-- RECURSOS -->
+  <!-- ========================================================= -->
+  <!-- 1. RECURSOS: MODELOS, IMÁGENES Y VÍDEOS                  -->
+  <!-- ========================================================= -->
+
   <a-assets>
-    <!-- Modelos 3D -->
+
+    <!-- ===================== -->
+    <!-- Modelos 3D principales -->
+    <!-- ===================== -->
+
     <a-asset-item id="museo" src="museo2.glb"></a-asset-item>
     <a-asset-item id="globo" src="globo.glb"></a-asset-item>
     <a-asset-item id="caballete" src="caballete.glb"></a-asset-item>
     <a-asset-item id="laboratorio" src="laboratorio.glb"></a-asset-item>
+
+    <!-- ===================== -->
+    <!-- Modelos 3D de cristales -->
+    <!-- ===================== -->
+
     <a-asset-item id="cristal1" src="cristal1.glb"></a-asset-item>
     <a-asset-item id="cristal2" src="cristal2.glb"></a-asset-item>
     <a-asset-item id="cristal3" src="cristal3.glb"></a-asset-item>
     <a-asset-item id="cristal5" src="cristal5.glb"></a-asset-item>
     <a-asset-item id="variosvasos" src="variosvasos.glb"></a-asset-item>
-   
 
-    <!-- Imágenes -->
+    <!-- ===================== -->
+    <!-- Imágenes generales -->
+    <!-- ===================== -->
+
     <img id="logos" src="logos.png">
-    <img id="minerales" src="minerales.jpg">
-    <img id="datos_semillas" src="datos_semillas.jpg">
     <img id="poster_global" src="poster_global.png">
-    <img id="biologia" src="biologia.png">
+
+    <!-- ===================== -->
+    <!-- Imágenes de Física y Química -->
+    <!-- ===================== -->
+
+    <img id="minerales" src="minerales.jpg">
     <img id="cartelfisica" src="cartelfisica.png">
-    <img id="cartelbiologia" src="cartelbiologia.png">
-    <img id="lanzamiento" src="lanzamiento.png">
     <img id="fotocristal1" src="fotocristal1.png">
     <img id="fotocristal2" src="fotocristal2.png">
+
+    <!-- ===================== -->
+    <!-- Imágenes de Biología -->
+    <!-- ===================== -->
+
+    <img id="datos_semillas" src="datos_semillas.jpg">
+    <img id="biologia" src="biologia.png">
+    <img id="cartelbiologia" src="cartelbiologia.png">
     <img id="plantas" src="plantas.png">
     <img id="lentejas" src="lentejas.png">
 
-    <!-- Vídeo -->
+    <!-- ===================== -->
+    <!-- Imágenes del globo sonda -->
+    <!-- ===================== -->
+
+    <img id="lanzamiento" src="lanzamiento.png">
+
+    <!-- ===================== -->
+    <!-- Vídeos -->
+    <!-- ===================== -->
+
     <video 
       id="concurso" 
       src="concurso.mp4"
@@ -51,8 +85,8 @@
       preload="auto"
       crossorigin="anonymous">
     </video>
-  </a-assets>
-   <video 
+
+    <video 
       id="hinchar_globo" 
       src="hinchar_globo.mp4"
       autoplay
@@ -63,208 +97,53 @@
       preload="auto"
       crossorigin="anonymous">
     </video>
+
   </a-assets>
 
-  <!-- CIELO AZUL -->
+
+  <!-- ========================================================= -->
+  <!-- 2. ENTORNO GENERAL: CIELO, LUZ Y MUSEO                   -->
+  <!-- ========================================================= -->
+
+  <!-- Cielo azul -->
   <a-sky color="#87CEEB"></a-sky>
 
-  <!-- LUZ GENERAL -->
+  <!-- Luz ambiental -->
   <a-light 
     type="ambient" 
     color="#FFFFFF" 
     intensity="0.7">
   </a-light>
 
+  <!-- Luz direccional -->
   <a-light 
     type="directional" 
     position="4 8 4" 
     intensity="0.8">
   </a-light>
 
- 
-
-  <!-- MODELO DEL MUSEO -->
+  <!-- Modelo del museo -->
   <a-entity 
     gltf-model="#museo"  
     position="0 0 0"  
     rotation="0 0 0"  
     scale="2 2 2">
   </a-entity>
+
+
+  <!-- ========================================================= -->
+  <!-- 3. ZONA DE FÍSICA Y QUÍMICA: CRISTALIZACIÓN              -->
+  <!-- ========================================================= -->
+
+  <!-- Laboratorio de Física y Química -->
   <a-entity 
     gltf-model="#laboratorio"  
     position="14 0 0"  
     rotation="0 180 0"  
     scale="0.5 0.5 0.5">
   </a-entity>
-  <a-entity 
-    gltf-model="#cristal1"  
-    position="13.5 2.15 -5"  
-    rotation="0 180 0"  
-    scale="0.4 0.25 0.4">
-  </a-entity>
-   <a-image 
-    src="#fotocristal1" 
-    position="14 3 -5"
-    rotation="0 -90 0" 
-    width="1" 
-    height="1"> 
-  </a-image>
-  <a-entity 
-    gltf-model="#cristal2"  
-    position="13.25 2.15 -1"  
-    rotation="0 180 0"  
-    scale="0.4 0.25 0.4">
-  </a-entity>
-  <a-image 
-    src="#fotocristal2" 
-    position="14 3 -1"
-    rotation="0 -90 0" 
-    width="1" 
-    height="1"> 
-  </a-image>
 
-  <a-entity 
-    gltf-model="#cristal3"  
-    position="13.5 2.95 -3"  
-    rotation="0 180 0"  
-    scale="0.25 0.25 0.25">
-  </a-entity>
-   <a-entity 
-    gltf-model="#cristal5"  
-    position="13.5 2.15 -2"  
-    rotation="0 180 0"  
-    scale="0.25 0.25 0.25">
-  </a-entity>
-  <a-entity 
-    gltf-model="#laboratorio"  
-    position="-14 0 0"  
-    rotation="0 0 0"  
-    scale="0.5 0.5 0.5">
-  </a-entity>
-  <a-image 
-    src="#datos_semillas" 
-    position="-14 2.25 0"
-    rotation="-90 0 90" 
-    width="1" 
-    height="2"> 
-  </a-image>
-  <a-image 
-    src="#datos_semillas" 
-    position="-14 2.26 0"
-    rotation="-90 15 90" 
-    width="1" 
-    height="2"> 
-  </a-image>
-  <a-image 
-    src="#datos_semillas" 
-    position="-14 2.27 0"
-    rotation="-90 20 90" 
-    width="1" 
-    height="2"> 
-  </a-image>
-  <a-image 
-    src="#datos_semillas" 
-    position="-14 2.25 0"
-    rotation="-90 30 90" 
-    width="1" 
-    height="2"> 
-  </a-image>
-  
-  <a-entity 
-    gltf-model="#variosvasos"  
-    position="-14 2.25 -5"  
-    rotation="0 0 0"  
-    scale="0.15 0.15 0.15">
-  </a-entity>
- 
-
-  <!-- GLOBO SONDA FUERA DEL MUSEO -->
-  <a-entity 
-    gltf-model="#globo" 
-    position="0 1 30" 
-    rotation="0 90 0" 
-    scale="1 1 1">
-  </a-entity>
-
-  <!-- CABALLETE FUERA DEL MUSEO -->
-  <a-entity 
-    gltf-model="#caballete" 
-    position="10 0 30" 
-    rotation="0 90 0" 
-    scale="1 1.5 1">
-  </a-entity>
-  <a-image 
-    src="#logos" 
-    position="10.25 6 31.25"
-    rotation="0 90 0" 
-    width="1.25" 
-    height="0.45"> 
-  </a-image>
-   <a-image 
-    src="#lanzamiento" 
-    position="10 3.5 30"
-    rotation="0 -90 0" 
-    width="4" 
-    height="6"> 
-  </a-image>
-   <a-video
-    src="#hinchar_globo"
-    position="10 3 35"
-    rotation="0 90 0"
-    width="3"
-    height="5">
-  </a-video>
-
-  <a-entity 
-    gltf-model="#caballete" 
-    position="10 0 35" 
-    rotation="0 90 0" 
-    scale="1 1.5 1">
-  </a-entity>
-  <a-image 
-    src="#logos" 
-    position="10.25 6 36.25"
-    rotation="0 90 0" 
-    width="1.25" 
-    height="0.45"> 
-  </a-image>
-   <a-entity 
-    gltf-model="#caballete" 
-    position="-5 0 35" 
-    rotation="0 90 0" 
-    scale="1 1.5 1">
-  </a-entity>
-  <a-image 
-    src="#logos" 
-    position="-5 6 33.75"
-    rotation="0 90 0" 
-    width="1" 
-    height="0.45"> 
-  </a-image>
-   <a-entity 
-    gltf-model="#caballete" 
-    position="-5 0 30" 
-    rotation="0 90 0" 
-    scale="1 1.5 1">
-  </a-entity>
-  <a-image 
-    src="#logos" 
-    position="-5 6 29"
-    rotation="0 90 0" 
-    width="1.25" 
-    height="0.45"> 
-  </a-image>
-
-  <!-- LOGOS EN LA PARED -->
-  <a-image 
-    src="#logos" 
-    position="-9 5.25 8.15"
-    rotation="0 0 0" 
-    width="4" 
-    height="1"> 
-  </a-image>
-
-  <!-- PÓSTER DE MINERALES / CRISTALES -->
+  <!-- Cartel de Física y Química -->
   <a-image 
     src="#cartelfisica" 
     position="16 4 0"
@@ -272,27 +151,8 @@
     width="4" 
     height="4"> 
   </a-image>
-  <a-image 
-    src="#cartelbiologia" 
-    position="-15.95 5.25 0"
-    rotation="0 90 0" 
-    width="3" 
-    height="3"> 
-  </a-image>
-  <a-image 
-    src="#lentejas" 
-    position="-15.95 4.5 -4"
-    rotation="0 90 0" 
-    width="2" 
-    height="3.5"> 
-  </a-image>
-  <a-image 
-    src="#plantas" 
-    position="-15.95 4.5 5"
-    rotation="0 90 0" 
-    width="3" 
-    height="4"> 
-  </a-image>
+
+  <!-- Póster de minerales / cristales -->
   <a-image 
     src="#minerales" 
     position="10 3.5 -8"
@@ -301,7 +161,253 @@
     height="6"> 
   </a-image>
 
-  <!-- VÍDEO DEL CONCURSO -->
+  <!-- Cristal 1 -->
+  <a-entity 
+    gltf-model="#cristal1"  
+    position="13.5 2.15 -5"  
+    rotation="0 180 0"  
+    scale="0.4 0.25 0.4">
+  </a-entity>
+
+  <a-image 
+    src="#fotocristal1" 
+    position="14 3 -5"
+    rotation="0 -90 0" 
+    width="1" 
+    height="1"> 
+  </a-image>
+
+  <!-- Cristal 2 -->
+  <a-entity 
+    gltf-model="#cristal2"  
+    position="13.25 2.15 -1"  
+    rotation="0 180 0"  
+    scale="0.4 0.25 0.4">
+  </a-entity>
+
+  <a-image 
+    src="#fotocristal2" 
+    position="14 3 -1"
+    rotation="0 -90 0" 
+    width="1" 
+    height="1"> 
+  </a-image>
+
+  <!-- Cristal 3 -->
+  <a-entity 
+    gltf-model="#cristal3"  
+    position="13.5 2.95 -3"  
+    rotation="0 180 0"  
+    scale="0.25 0.25 0.25">
+  </a-entity>
+
+  <!-- Cristal 5 -->
+  <a-entity 
+    gltf-model="#cristal5"  
+    position="13.5 2.15 -2"  
+    rotation="0 180 0"  
+    scale="0.25 0.25 0.25">
+  </a-entity>
+
+
+  <!-- ========================================================= -->
+  <!-- 4. ZONA DE BIOLOGÍA: PLANTAS, LENTEJAS Y SEMILLAS        -->
+  <!-- ========================================================= -->
+
+  <!-- Laboratorio de Biología -->
+  <a-entity 
+    gltf-model="#laboratorio"  
+    position="-14 0 0"  
+    rotation="0 0 0"  
+    scale="0.5 0.5 0.5">
+  </a-entity>
+
+  <!-- Cartel del departamento de Biología -->
+  <a-image 
+    src="#cartelbiologia" 
+    position="-15.95 5.25 0"
+    rotation="0 90 0" 
+    width="3" 
+    height="3"> 
+  </a-image>
+
+  <!-- Infografía de lentejas -->
+  <a-image 
+    src="#lentejas" 
+    position="-15.95 4.5 -4"
+    rotation="0 90 0" 
+    width="2" 
+    height="3.5"> 
+  </a-image>
+
+  <!-- Infografía de plantas -->
+  <a-image 
+    src="#plantas" 
+    position="-15.95 4.5 5"
+    rotation="0 90 0" 
+    width="3" 
+    height="4"> 
+  </a-image>
+
+  <!-- Póster de Biología -->
+  <a-image 
+    src="#biologia" 
+    position="0 3.5 -8"
+    rotation="0 0 0" 
+    width="4" 
+    height="6"> 
+  </a-image>
+
+  <!-- Datos de semillas: varias copias inclinadas -->
+  <a-image 
+    src="#datos_semillas" 
+    position="-14 2.25 0"
+    rotation="-90 0 90" 
+    width="1" 
+    height="2"> 
+  </a-image>
+
+  <a-image 
+    src="#datos_semillas" 
+    position="-14 2.26 0"
+    rotation="-90 15 90" 
+    width="1" 
+    height="2"> 
+  </a-image>
+
+  <a-image 
+    src="#datos_semillas" 
+    position="-14 2.27 0"
+    rotation="-90 20 90" 
+    width="1" 
+    height="2"> 
+  </a-image>
+
+  <a-image 
+    src="#datos_semillas" 
+    position="-14 2.25 0"
+    rotation="-90 30 90" 
+    width="1" 
+    height="2"> 
+  </a-image>
+
+  <!-- Vasos del experimento de semillas -->
+  <a-entity 
+    gltf-model="#variosvasos"  
+    position="-14 2.25 -5"  
+    rotation="0 0 0"  
+    scale="0.15 0.15 0.15">
+  </a-entity>
+
+
+  <!-- ========================================================= -->
+  <!-- 5. ZONA EXTERIOR: GLOBO SONDA                            -->
+  <!-- ========================================================= -->
+
+  <!-- Globo sonda -->
+  <a-entity 
+    gltf-model="#globo" 
+    position="0 1 30" 
+    rotation="0 90 0" 
+    scale="1 1 1">
+  </a-entity>
+
+  <!-- Caballete 1: lanzamiento -->
+  <a-entity 
+    gltf-model="#caballete" 
+    position="10 0 30" 
+    rotation="0 90 0" 
+    scale="1 1.5 1">
+  </a-entity>
+
+  <a-image 
+    src="#logos" 
+    position="10.25 6 31.25"
+    rotation="0 90 0" 
+    width="1.25" 
+    height="0.45"> 
+  </a-image>
+
+  <a-image 
+    src="#lanzamiento" 
+    position="10 3.5 30"
+    rotation="0 -90 0" 
+    width="4" 
+    height="6"> 
+  </a-image>
+
+  <!-- Vídeo del inflado del globo -->
+  <a-video
+    src="#hinchar_globo"
+    position="10 3 35"
+    rotation="0 90 0"
+    width="3"
+    height="5">
+  </a-video>
+
+  <!-- Caballete 2 -->
+  <a-entity 
+    gltf-model="#caballete" 
+    position="10 0 35" 
+    rotation="0 90 0" 
+    scale="1 1.5 1">
+  </a-entity>
+
+  <a-image 
+    src="#logos" 
+    position="10.25 6 36.25"
+    rotation="0 90 0" 
+    width="1.25" 
+    height="0.45"> 
+  </a-image>
+
+  <!-- Caballete 3 -->
+  <a-entity 
+    gltf-model="#caballete" 
+    position="-5 0 35" 
+    rotation="0 90 0" 
+    scale="1 1.5 1">
+  </a-entity>
+
+  <a-image 
+    src="#logos" 
+    position="-5 6 33.75"
+    rotation="0 90 0" 
+    width="1" 
+    height="0.45"> 
+  </a-image>
+
+  <!-- Caballete 4 -->
+  <a-entity 
+    gltf-model="#caballete" 
+    position="-5 0 30" 
+    rotation="0 90 0" 
+    scale="1 1.5 1">
+  </a-entity>
+
+  <a-image 
+    src="#logos" 
+    position="-5 6 29"
+    rotation="0 90 0" 
+    width="1.25" 
+    height="0.45"> 
+  </a-image>
+
+
+  <!-- ========================================================= -->
+  <!-- 6. CARTELES GENERALES DEL MUSEO                          -->
+  <!-- ========================================================= -->
+
+  <!-- Logos en la pared -->
+  <a-image 
+    src="#logos" 
+    position="-9 5.25 8.15"
+    rotation="0 0 0" 
+    width="4" 
+    height="1"> 
+  </a-image>
+
+  <!-- Vídeo del concurso -->
   <a-video
     src="#concurso"
     position="10 3 7.5"
@@ -310,17 +416,7 @@
     height="5">
   </a-video>
 
-  <!-- PÓSTER DE BIOLOGÍA -->
-  <a-image 
-    src="#biologia" 
-    position="0 3.5 -8"
-    rotation="0 0 0" 
-    width="4" 
-    height="6"> 
-  </a-image>
-  
-
-  <!-- PÓSTER GLOBAL -->
+  <!-- Póster global -->
   <a-image 
     src="#poster_global" 
     position="8 3.5 8.15"
@@ -329,7 +425,11 @@
     height="6"> 
   </a-image>
 
-  <!-- CÁMARA DEL VISITANTE -->
+
+  <!-- ========================================================= -->
+  <!-- 7. CÁMARA DEL VISITANTE                                  -->
+  <!-- ========================================================= -->
+
   <a-entity
     position="0 3.5 35"
     camera
@@ -338,5 +438,6 @@
   </a-entity>
 
 </a-scene>
+
 </body>
 </html>
