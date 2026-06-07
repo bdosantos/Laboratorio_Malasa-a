@@ -36,6 +36,7 @@
     <a-asset-item id="microscopio" src="microcopio.glb"></a-asset-item>
     <a-asset-item id="cuarzo" src="cuarzo.glb"></a-asset-item>
     <a-asset-item id="cristales" src="cristales.glb"></a-asset-item>
+    <a-asset-item id="cuaderno" src="cuaderno.glb"></a-asset-item>
     
     
       <!-- ===================== -->
@@ -216,34 +217,40 @@
   <!-- cuarzo -->
   <a-entity 
     gltf-model="#cuarzo"  
-    position="13.25 2.25 0"  
+    position="13.25 2.25 -3"  
     rotation="0 -90 0"  
     scale="0.15 0.15 0.15">
   </a-entity>
   <!-- luz sobre el cuarzo -->
    <a-light
      type="point"
-     position="12 2 0"
+     position="12 2 -3"
      intensity="2"
-     distance="3"
+     distance="2"
      decay="1"
     color="#FFFFFF">
    </a-light>
    <!-- cristales -->
   <a-entity 
     gltf-model="#cristales"  
-    position="13.25 2.25 2"  
+    position="13.25 2.25 -1"  
     rotation="0 -90 0"  
     scale="0.15 0.15 0.15">
   </a-entity>
   <a-light
      type="point"
-     position="12 2 2"
+     position="12 2 -1"
      intensity="2"
-     distance="3"
+     distance="2"
      decay="1"
     color="#FFFFFF">
    </a-light>
+   <a-entity 
+    gltf-model="#cuaderno"  
+    position="13.25 2.25 1"  
+    rotation="0 0 0"  
+    scale="0.15 0.15 0.15">
+  </a-entity>
 
 
   <!-- ========================================================= -->
