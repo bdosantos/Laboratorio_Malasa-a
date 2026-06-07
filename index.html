@@ -443,12 +443,44 @@
   <!-- ========================================================= -->
 
   <!-- Globo sonda -->
-  <a-entity 
-    gltf-model="#globo" 
-    position="0 1 30" 
-    rotation="0 90 0" 
-    scale="1 1 1">
-  </a-entity>
+ <!-- Globo sonda animado: sube, avanza, cae y gira -->
+<a-entity 
+  gltf-model="#globo" 
+  position="0 1 30" 
+  rotation="0 90 0" 
+  scale="1 1 1"
+
+  animation__sube="
+    property: position;
+    from: 0 1 30;
+    to: 0 12 30;
+    dur: 6000;
+    easing: easeInOutSine"
+
+  animation__avanza="
+    property: position;
+    from: 0 12 30;
+    to: 8 12 30;
+    dur: 4000;
+    easing: linear;
+    startEvents: animationcomplete__sube"
+
+  animation__cae="
+    property: position;
+    from: 8 12 30;
+    to: 8 1 30;
+    dur: 5000;
+    easing: easeInQuad;
+    startEvents: animationcomplete__avanza"
+
+  animation__gira="
+    property: rotation;
+    from: 0 90 0;
+    to: 0 450 180;
+    dur: 5000;
+    easing: linear;
+    startEvents: animationcomplete__avanza">
+</a-entity>
 
   <!-- Caballete 1: lanzamiento -->
   <a-entity 
