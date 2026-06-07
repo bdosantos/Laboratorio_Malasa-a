@@ -17,7 +17,7 @@
   <!-- 1. RECURSOS: MODELOS, IMÁGENES Y VÍDEOS                  -->
   <!-- ========================================================= -->
 
-  <a-assets>
+  <a-assets timeout="5000">
 
     <!-- ===================== -->
     <!-- Modelos 3D principales -->
@@ -238,7 +238,13 @@
     scale="0.25 0.25 0.25">
   </a-entity>
 
-  
+  <!-- Cristal 5 -->
+  <a-entity 
+    gltf-model="#cristal5"  
+    position="13.5 2.15 -2"  
+    rotation="0 180 0"  
+    scale="0.25 0.25 0.25">
+  </a-entity>
   <!-- microscopio -->
   <a-entity 
     gltf-model="#microscopio"  
@@ -369,13 +375,13 @@
     rotation="0 100 0"  
     scale="0.08 0.15 0.05">
   </a-entity>
-  <a-entity 
+    <a-entity 
     gltf-model="#planta11"  
     position="-14.3 2.25 3"  
     rotation="0 100 0"  
     scale="0.08 0.15 0.05">
   </a-entity>
-  <a-entity 
+    <a-entity 
     gltf-model="#planta11"  
     position="-14.5 2.25 3"  
     rotation="0 100 0"  
